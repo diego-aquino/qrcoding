@@ -4,15 +4,19 @@ import { FC } from 'react';
 
 import styles from '~/styles/components/common/Layout.module.scss';
 
+import Header from './Header';
+
 interface Props {
   pageTitle: string;
 }
 
 const Layout: FC<Props> = ({ pageTitle, children }) => (
-  <div>
+  <div className={styles.container}>
     <Head>
       <title>{pageTitle}</title>
     </Head>
+
+    <Header />
 
     <div className={styles.backgroundImageContainer}>
       <Image
