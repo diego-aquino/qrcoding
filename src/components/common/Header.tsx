@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { FC } from 'react';
 
-import { LogoFull } from '~/assets';
+import { LogoFullIcon } from '~/assets';
 import styles from '~/styles/components/common/Header.module.scss';
 
 import Button from './Button';
@@ -12,7 +12,7 @@ const Header: FC = () => (
   <header className={styles.container}>
     <Link href="/">
       <a className={styles.logo}>
-        <LogoFull />
+        <LogoFullIcon />
       </a>
     </Link>
 

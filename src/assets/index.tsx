@@ -1,3 +1,5 @@
-import LogoFull from './logo-full.svg';
+import { HiCode as CodeIcon } from 'react-icons/hi';
 
-export { LogoFull };
+import LogoFullIcon from './logo-full.svg';
+
+export { LogoFullIcon, CodeIcon };

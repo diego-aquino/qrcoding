@@ -1,17 +1,19 @@
+import clsx from 'clsx';
 import Head from 'next/head';
 import Image from 'next/image';
-import { FC } from 'react';
+import { FC, HTMLAttributes } from 'react';
 
 import styles from '~/styles/components/common/Layout.module.scss';
 
+import Copyright from './Copyright';
 import Header from './Header';
 
-interface Props {
+interface Props extends HTMLAttributes<HTMLDivElement> {
   pageTitle: string;
 }
 
-const Layout: FC<Props> = ({ pageTitle, children }) => (
-  <div className={styles.container}>
+const Layout: FC<Props> = ({ pageTitle, className, children }) => (
+  <div className={clsx(styles.container, className)}>
     <Head>
       <title>{pageTitle}</title>
     </Head>
@@ -27,7 +29,11 @@ const Layout: FC<Props> = ({ pageTitle, children }) => (
       />
     </div>
 
-    {children}
+    <main>{children}</main>
+
+    <footer>
+      <Copyright />
+    </footer>
   </div>
 );
 
