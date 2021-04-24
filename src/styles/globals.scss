@@ -1,0 +1,26 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --color-black: #08090c;
+  --color-green: #0dda94;
+  --color-white: #ffffff;
+
+  font-size: 62.5%;
+}
+
+body {
+  background-color: var(--color-black);
+}
+
+body,
+button,
+input,
+textarea,
+select {
+  font-family: 'Ubuntu Mono', monospace;
+  font-size: 1.6rem;
+}

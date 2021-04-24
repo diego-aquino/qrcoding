@@ -1,0 +1,19 @@
+.container {
+  min-width: 200px;
+  min-height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+
+  main {
+    flex: 1;
+  }
+}
+
+.backgroundImageContainer {
+  > div,
+  > div img {
+    min-width: 200px;
+    z-index: -9999;
+  }
+}
