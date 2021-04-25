@@ -5,12 +5,20 @@ import { CircularRightArrow } from '~/assets';
 import { Layout } from '~/components/common';
 import styles from '~/styles/pages/HomePage.module.scss';
 
+// 2953 characters, using binary enconding and error correction level "L"
+const MAX_QRCODE_CHARACTER_LENGTH = 2953;
+
 const HomePage: FC = () => {
   const [qrCodeValue, setQRCodeValue] = useState('');
 
   const handleTextareaChange = useCallback(
     (event: ChangeEvent<HTMLTextAreaElement>) => {
-      setQRCodeValue(event.target.value);
+      const { value } = event.target;
+
+      const isValidValue = value.length <= MAX_QRCODE_CHARACTER_LENGTH;
+      if (!isValidValue) return;
+
+      setQRCodeValue(value);
     },
     [],
   );
