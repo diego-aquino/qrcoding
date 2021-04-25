@@ -1,7 +1,33 @@
-import { FC } from 'react';
+import QRCode from 'qrcode.react';
+import { ChangeEvent, FC, useCallback, useState } from 'react';
 
+import { CircularRightArrow } from '~/assets';
 import { Layout } from '~/components/common';
+import styles from '~/styles/pages/HomePage.module.scss';
 
-const Home: FC = () => <Layout pageTitle="QR Coding" />;
+const HomePage: FC = () => {
+  const [qrCodeValue, setQRCodeValue] = useState('');
 
-export default Home;
+  const handleTextareaChange = useCallback(
+    (event: ChangeEvent<HTMLTextAreaElement>) => {
+      setQRCodeValue(event.target.value);
+    },
+    [],
+  );
+
+  return (
+    <Layout pageTitle="QR Coding" className={styles.container}>
+      <div className={styles.generatorContainer}>
+        <textarea
+          value={qrCodeValue}
+          onChange={handleTextareaChange}
+          placeholder="Digite o seu texto aqui..."
+        />
+        <CircularRightArrow />
+        <QRCode className={styles.qrCode} value={qrCodeValue} renderAs="svg" />
+      </div>
+    </Layout>
+  );
+};
+
+export default HomePage;

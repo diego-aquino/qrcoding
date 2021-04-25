@@ -1,3 +1,5 @@
+@import '../../partials/variables';
+
 .container {
   padding: 2.4rem 3.6rem;
 
@@ -40,7 +42,7 @@
 }
 
 .logo {
-  transition: filter 0.2s;
+  transition: filter $transition-duration;
 
   &:hover {
     filter: brightness(1.1);
@@ -51,7 +53,7 @@
   position: relative;
 
   font-size: 1.8rem;
-  color: var(--color-white);
+  color: $color-white;
   text-decoration: none;
 
   &::after {
@@ -65,10 +67,10 @@
     left: 50%;
     transform: translateX(-50%);
 
-    background-color: var(--color-green);
+    background-color: $color-green;
 
     opacity: 0;
-    transition: width 0.2s, opacity 0.2s;
+    transition: width $transition-duration, opacity $transition-duration;
   }
 
   &:hover::after {

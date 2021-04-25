@@ -1,3 +1,5 @@
+@import './partials/variables';
+
 * {
   margin: 0;
   padding: 0;
@@ -5,15 +7,11 @@
 }
 
 :root {
-  --color-black: #08090c;
-  --color-green: #0dda94;
-  --color-white: #ffffff;
-
   font-size: 62.5%;
 }
 
 body {
-  background-color: var(--color-black);
+  background-color: $color-black;
 }
 
 body,
