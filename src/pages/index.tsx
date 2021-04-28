@@ -1,11 +1,11 @@
 import QRCode from 'qrcode.react';
 import { ChangeEvent, FC, useCallback, useState } from 'react';
 
-import { CircularRightArrow, CloudDownload, Copiar } from '~/assets';
+import { CircularRightArrow, CloudDownloadFrame, CopyFrame } from '~/assets';
 import { Layout } from '~/components/common';
-import Copy from '~/components/common/Copy';
-import Download from '~/components/common/Download';
 import styles from '~/styles/pages/HomePage.module.scss';
+
+import Button from '../components/common/Button';
 
 // 2953 characters, using binary enconding and error correction level "L"
 const MAX_QRCODE_CHARACTER_LENGTH = 2953;
@@ -27,9 +27,7 @@ const HomePage: FC = () => {
 
   return (
     <Layout pageTitle="QR Coding" className={styles.container}>
-      <div className={styles.tituloGenerator}>
-        <h1>Compartilhe sua mensagem...</h1>
-      </div>
+      <h1>Compartilhe sua mensagem...</h1>
 
       <div className={styles.generatorContainer}>
         <textarea
@@ -42,14 +40,15 @@ const HomePage: FC = () => {
       </div>
 
       <div className={styles.downloadContainer}>
-        <div className={styles.downloader}>
-          <Download />
-          <CloudDownload />
-        </div>
-        <div className={styles.copy}>
-          <Copy />
-          <Copiar />
-        </div>
+        <Button variant="primary" className={styles.downloader}>
+          Download
+          <CloudDownloadFrame />
+        </Button>
+
+        <Button variant="secondary" className={styles.copier}>
+          Copiar
+          <CopyFrame />
+        </Button>
       </div>
     </Layout>
   );
