@@ -6,7 +6,6 @@ import { FC, HTMLAttributes } from 'react';
 import styles from '~/styles/components/common/Layout.module.scss';
 
 import Copyright from './Copyright';
-import Download from './Download';
 import Header from './Header';
 
 interface Props extends HTMLAttributes<HTMLDivElement> {
