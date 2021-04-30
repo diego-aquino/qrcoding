@@ -113,4 +113,8 @@
   align-items: center;
 
   margin-left: 2rem;
+
+  .copyFrame:hover {
+    color: $color-black;
+  }
 }
