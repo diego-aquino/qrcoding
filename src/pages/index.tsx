@@ -27,7 +27,7 @@ const HomePage: FC = () => {
   function downloadQrcode() {
     const svg = document.getElementById('qrcode-svg');
     if (svg != null) {
-      saveSvgAsPng(svg, 'qrcode');
+      saveSvgAsPng(svg, 'qrcode', { scale: 10 });
     }
   }
 
@@ -45,6 +45,8 @@ const HomePage: FC = () => {
         <QRCode
           className={styles.qrCode}
           value={qrCodeValue}
+          bgColor="#FFFFFF"
+          fgColor="#000000"
           renderAs="svg"
           id="qrcode-svg"
         />

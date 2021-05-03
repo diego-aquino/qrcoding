@@ -105,16 +105,3 @@
   grid-gap: 0.5rem;
   align-items: center;
 }
-
-.copier {
-  display: grid;
-  grid-template-columns: 1fr auto;
-  grid-gap: 0.5rem;
-  align-items: center;
-
-  margin-left: 2rem;
-
-  .copyFrame:hover {
-    color: $color-black;
-  }
-}
