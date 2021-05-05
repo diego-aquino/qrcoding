@@ -1,8 +1,7 @@
 declare module 'save-svg-as-png' {
-  // eslint-disable-next-line no-unused-vars
   export const saveSvgAsPng: (
-    svgElement: Node,
+    svgElement: SVGSVGElement,
     fileName: string,
     scale: any,
-  ) => void;
+  ) => Promise<void>;
 }
