@@ -1,18 +1,31 @@
 @import '../partials/variables';
 
 .container main {
-  padding: 5.4rem 0;
+  padding: 5.4rem 2.4rem;
 
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
 
+  h1 {
+    margin-bottom: 5rem;
+    color: $color-white;
+    text-align: center;
+  }
+
   .generatorContainer {
     width: 100%;
+  }
 
-    @media (max-width: 680px) {
-      padding: 0 2.4rem;
-    }
+  .downloadContainer {
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-top: 5rem;
   }
 
   textarea {
@@ -81,4 +94,11 @@
       transform: rotate(90deg);
     }
   }
+}
+
+.downloader {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  grid-gap: 0.5rem;
+  align-items: center;
 }

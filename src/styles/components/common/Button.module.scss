@@ -31,8 +31,8 @@
       background-color $transition-duration;
 
     &:hover {
-      border-color: $color-green;
       color: $color-black;
+      border-color: $color-green;
       background-color: $color-green;
     }
   }
